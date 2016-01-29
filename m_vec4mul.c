@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   m_vec4mul.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/25 23:09:22 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/29 23:39:33 by rmc-coma         ###   ########.fr       */
+/*   Created: 2016/01/29 23:03:54 by rmc-coma          #+#    #+#             */
+/*   Updated: 2016/01/29 23:46:53 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 
-int	main(void)
+t_vec4	m_vec4mul(t_vec4 left, t_mat4 right)
 {
-	t_mat4	matrix;
 	t_vec4	vector;
+	t_size	i;
+	t_size	j;
 
-	matrix = m_mat4val(m_vec4val(1, 2, 3, 0), m_vec4val(2, 1, 2, 0), m_vec4val(3, 2, 1, 0), m_vec4val(0, 0, 0, 0));
-	m_mat4put(matrix);
-	vector = m_vec4val(1, 2, 3, 0);
-	m_vec4put(vector);
-	m_vec4put(m_vec4mul(vector, matrix));
-	return (0);
+	vector = m_vec4ini();
+	i = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			vector.vec[i] += left.vec[j] * right.mat[i][j];
+			j++;
+		}
+		i++;
+	}
+	return (vector);
 }

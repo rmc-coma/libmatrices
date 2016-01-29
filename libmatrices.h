@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 21:39:16 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/27 19:58:54 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/29 23:52:53 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,33 @@ typedef struct			s_matx
 	t_size	y_size;
 }						t_matx;
 
-t_mat4	mth_mat4ini(void);
-t_mat4	mth_mat4idt(void);
-t_mat4	mth_mat4add(t_mat4 left, t_mat4 right);
-t_mat4	mth_mat4sub(t_mat4 left, t_mat4 right);
-t_mat4	mth_mat4mul(t_mat4 left, t_mat4 right);
+t_vec4					m_vec4ini(void);
+t_vec4					m_vec4val(long x, long y, long z, long w);
 
-t_mats	mth_matsini(t_size mat_size);
-t_mats	mth_matsidt(t_size mat_size);
-t_mats	mth_matsadd(t_mats left, t_mats right);
-t_mats	mth_matssub(t_mats left, t_mats right);
-t_mats	mth_matsmul(t_mats left, t_mats right);
+t_mat4					m_mat4ini(void);
+t_mat4					m_mat4idt(void);
+t_mat4					m_mat4val(t_vec4 first, t_vec4 second,
+								t_vec4 third, t_vec4 fourth);
+t_mat4					m_mat4add(t_mat4 left, t_mat4 right);
+t_mat4					m_mat4sub(t_mat4 left, t_mat4 right);
+t_mat4					m_mat4mul(t_mat4 left, t_mat4 right);
 
-t_matx	mth_matxini(t_size x_size, t_size y_size);
-t_matx	mth_matxadd(t_matx left, t_matx right);
-t_matx	mth_matxsub(t_matx left, t_matx right);
-t_matx	mth_matxmul(t_matx left, t_matx right);
+t_mats					m_matsini(t_size mat_size);
+t_mats					m_matsidt(t_size mat_size);
+t_mats					m_matsadd(t_mats left, t_mats right);
+t_mats					m_matssub(t_mats left, t_mats right);
+t_mats					m_matsmul(t_mats left, t_mats right);
 
+t_matx					m_matxini(t_size x_size, t_size y_size);
+t_matx					m_matxadd(t_matx left, t_matx right);
+t_matx					m_matxsub(t_matx left, t_matx right);
+t_matx					m_matxmul(t_matx left, t_matx right);
 
-void	mth_mat4put(t_mat4 mat);
-void	mth_matsput(t_mats mat);
-void	mth_matxput(t_matx mat);
+t_vec4					m_vec4mul(t_vec4 vector, t_mat4 matrix);
+
+void					m_mat4put(t_mat4 mat);
+void					m_matsput(t_mats mat);
+void					m_matxput(t_matx mat);
+void					m_vec4put(t_vec4 vec);
 
 #endif

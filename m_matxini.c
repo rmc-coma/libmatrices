@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   m_matxini.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/25 23:09:22 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/29 23:39:33 by rmc-coma         ###   ########.fr       */
+/*   Created: 2016/01/26 20:19:23 by rmc-coma          #+#    #+#             */
+/*   Updated: 2016/01/29 22:25:31 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 
-int	main(void)
+t_matx	m_matxini(t_size x_size, t_size y_size)
 {
-	t_mat4	matrix;
-	t_vec4	vector;
+	t_matx	matrix;
+	t_size	i;
+	t_size	j;
 
-	matrix = m_mat4val(m_vec4val(1, 2, 3, 0), m_vec4val(2, 1, 2, 0), m_vec4val(3, 2, 1, 0), m_vec4val(0, 0, 0, 0));
-	m_mat4put(matrix);
-	vector = m_vec4val(1, 2, 3, 0);
-	m_vec4put(vector);
-	m_vec4put(m_vec4mul(vector, matrix));
-	return (0);
+	if (x_size < 1 || y_size < 1)
+		exit(EXIT_FAILURE);
+	matrix.mat = (long **)malloc(sizeof(long *) * x_size);
+	i = 0;
+	while (i < x_size)
+	{
+		matrix.mat[i] = (long *)malloc(sizeof(long) * y_size);
+		j = 0;
+		while (j < y_size)
+		{
+			matrix.mat[i][j] = 0;
+			j++;
+		}
+		i++;
+	}
+	matrix.x_size = x_size;
+	matrix.y_size = y_size;
+	return (matrix);
 }

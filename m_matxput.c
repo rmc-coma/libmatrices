@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   m_matxput.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/25 23:09:22 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/29 23:39:33 by rmc-coma         ###   ########.fr       */
+/*   Created: 2016/01/26 20:46:27 by rmc-coma          #+#    #+#             */
+/*   Updated: 2016/01/29 22:26:03 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
+#include <stdio.h>
 
-int	main(void)
+void	m_matxput(t_matx mat)
 {
-	t_mat4	matrix;
-	t_vec4	vector;
+	t_size	i;
+	t_size	j;
 
-	matrix = m_mat4val(m_vec4val(1, 2, 3, 0), m_vec4val(2, 1, 2, 0), m_vec4val(3, 2, 1, 0), m_vec4val(0, 0, 0, 0));
-	m_mat4put(matrix);
-	vector = m_vec4val(1, 2, 3, 0);
-	m_vec4put(vector);
-	m_vec4put(m_vec4mul(vector, matrix));
-	return (0);
+	i = 0;
+	while (i < mat.x_size)
+	{
+		j = 0;
+		while (j < mat.y_size)
+		{
+			if (mat.mat[i][j] < 10)
+				printf(" ");
+			printf("%ld ", mat.mat[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
 }
