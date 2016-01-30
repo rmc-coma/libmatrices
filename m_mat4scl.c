@@ -6,20 +6,20 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/30 02:36:22 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/30 05:07:35 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/30 23:28:32 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 
-void	m_mat4scl(t_mat4 **matrix, long x_trs, long y_trs, long z_trs)
+void	m_mat4scl(t_mat4 **matrix, T_MATU x_scl, T_MATU y_scl, T_MATU z_scl)
 {
-	t_mat4	*translation;
+	t_mat4	*scale;
 
-	translation = m_mat4idt();
-	translation->mat[0][0] *= x_trs;
-	translation->mat[1][1] *= y_trs;
-	translation->mat[2][2] *= z_trs;
-	*matrix = m_mat4mul(*matrix, translation);
-	free(translation);
+	scale = m_mat4idt();
+	scale->mat[0][0] *= x_scl;
+	scale->mat[1][1] *= y_scl;
+	scale->mat[2][2] *= z_scl;
+	m_mat4mul(matrix, *matrix, scale);
+	free(scale);
 }

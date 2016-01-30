@@ -6,13 +6,13 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/29 21:06:59 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/30 01:01:26 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/30 23:02:06 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 
-t_vec4	*m_vec4val(long x, long y, long z, long w)
+t_vec4	*m_vec4val(T_MATU x, T_MATU y, T_MATU z, T_MATU w)
 {
 	t_vec4	*vector;
 
