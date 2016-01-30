@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 21:39:16 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/30 01:13:10 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/30 02:12:01 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ typedef struct			s_matx
 
 t_vec4					*m_vec4ini(void);
 t_vec4					*m_vec4val(long x, long y, long z, long w);
-t_vec4					*m_vec4mul(t_vec4 *vector, t_mat4 *matrix);
 
 t_mat4					*m_mat4ini(void);
 t_mat4					*m_mat4idt(void);
@@ -62,6 +61,13 @@ t_matx					m_matxini(t_size x_size, t_size y_size);
 t_matx					m_matxadd(t_matx left, t_matx right);
 t_matx					m_matxsub(t_matx left, t_matx right);
 t_matx					m_matxmul(t_matx left, t_matx right);
+
+t_vec4					*m_mat4vec4mul(t_mat4 *matrix, t_vec4 *vector);
+
+/*
+** Debug fonctions
+** /!\ USE PRINTF
+*/
 
 void					m_mat4put(t_mat4 *matrix);
 void					m_matsput(t_mats *matrix);

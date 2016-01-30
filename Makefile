@@ -6,7 +6,7 @@
 #    By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 13:18:15 by rmc-coma          #+#    #+#              #
-#    Updated: 2016/01/30 01:27:28 by rmc-coma         ###   ########.fr        #
+#    Updated: 2016/01/30 02:05:16 by rmc-coma         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -34,7 +34,7 @@ SRC = 	./m_mat4ini.c \
 		./m_matxmul.c \
 		./m_vec4ini.c \
 		./m_vec4val.c \
-		./m_vec4mul.c
+		./m_mat4vec4mul.c
 
 OBJ = $(SRC:%.c=%.o)
 
