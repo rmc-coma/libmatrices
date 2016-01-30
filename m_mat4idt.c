@@ -6,22 +6,22 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 19:53:06 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/29 22:21:00 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/30 01:07:26 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 
-t_mat4	m_mat4idt(void)
+t_mat4	*m_mat4idt(void)
 {
-	t_mat4	matrix;
+	t_mat4	*matrix;
 	t_size	i;
 
 	matrix = m_mat4ini();
 	i = 0;
 	while (i < 4)
 	{
-		matrix.mat[i][i] = 1;
+		matrix->mat[i][i] = 1;
 		i++;
 	}
 	return (matrix);

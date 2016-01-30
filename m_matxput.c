@@ -6,27 +6,27 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/26 20:46:27 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/29 22:26:03 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/30 01:30:39 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 #include <stdio.h>
 
-void	m_matxput(t_matx mat)
+void	m_matxput(t_matx *matrix)
 {
 	t_size	i;
 	t_size	j;
 
 	i = 0;
-	while (i < mat.x_size)
+	while (i < matrix->x_size)
 	{
 		j = 0;
-		while (j < mat.y_size)
+		while (j < matrix->y_size)
 		{
-			if (mat.mat[i][j] < 10)
+			if (matrix->mat[i][j] < 10)
 				printf(" ");
-			printf("%ld ", mat.mat[i][j]);
+			printf("%ld ", matrix->mat[i][j]);
 			j++;
 		}
 		printf("\n");

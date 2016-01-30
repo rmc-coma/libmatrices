@@ -6,23 +6,23 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/29 23:31:58 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/29 23:49:39 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/30 01:15:44 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 #include <stdio.h>
 
-void	m_vec4put(t_vec4 vec)
+void	m_vec4put(t_vec4 *vector)
 {
 	t_size	i;
 
 	i = 0;
 	while (i < 4)
 	{
-		if (vec.vec[i] < 10)
+		if (vector->vec[i] < 10)
 			printf(" ");
-		printf("%ld ", vec.vec[i]);
+		printf("%ld ", vector->vec[i]);
 		i++;
 	}
 	printf("\n");

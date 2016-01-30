@@ -6,7 +6,7 @@
 #    By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 13:18:15 by rmc-coma          #+#    #+#              #
-#    Updated: 2016/01/29 23:37:51 by rmc-coma         ###   ########.fr        #
+#    Updated: 2016/01/30 01:27:28 by rmc-coma         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -51,6 +51,7 @@ clean:
 	-@rm -rf m_mat4put.o
 	-@rm -rf m_matsput.o
 	-@rm -rf m_matxput.o
+	-@rm -rf m_vec4put.o
 	-@rm -rf *~
 
 fclean: clean

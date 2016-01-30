@@ -6,14 +6,14 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 23:09:58 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/29 23:48:08 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/30 01:09:55 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 #include <stdio.h>
 
-void	m_mat4put(t_mat4 mat)
+void	m_mat4put(t_mat4 *matrix)
 {
 	t_size	i;
 	t_size	j;
@@ -24,9 +24,9 @@ void	m_mat4put(t_mat4 mat)
 		j = 0;
 		while (j < 4)
 		{
-			if (mat.mat[i][j] < 10)
+			if (matrix->mat[i][j] < 10)
 				printf(" ");
-			printf("%ld ", mat.mat[i][j]);
+			printf("%ld ", matrix->mat[i][j]);
 			j++;
 		}
 		printf("\n");
