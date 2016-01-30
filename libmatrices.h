@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 21:39:16 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/30 02:12:01 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/30 04:13:15 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBMATRICES_H
 
 # include <stdlib.h>
+# include <math.h>
 
 typedef unsigned int	t_size;
 
@@ -50,6 +51,9 @@ t_mat4					*m_mat4val(t_vec4 *first, t_vec4 *second,
 t_mat4					*m_mat4add(t_mat4 *left, t_mat4 *right);
 t_mat4					*m_mat4sub(t_mat4 *left, t_mat4 *right);
 t_mat4					*m_mat4mul(t_mat4 *left, t_mat4 *right);
+void					m_mat4trs(t_mat4 **matrix, long x_trs, long y_trs, long z_trs);
+void					m_mat4scl(t_mat4 **matrix, long x_scl, long y_scl, long z_scl);
+void					m_mat4rot(t_mat4 **matrix, int angle);
 
 t_mats					m_matsini(t_size mat_size);
 t_mats					m_matsidt(t_size mat_size);
