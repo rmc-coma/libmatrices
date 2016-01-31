@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/29 23:31:58 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/30 23:38:34 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/31 04:00:57 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	m_vec4put(t_vec4 *vector)
 	{
 		if (vector->vec[i] < 10)
 			printf(" ");
-		printf("%ld ", vector->vec[i]);
+		printf("%f ", vector->vec[i]);
 		i++;
 	}
 	printf("\n\n");

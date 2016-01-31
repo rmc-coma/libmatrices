@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 21:39:16 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/31 01:40:40 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/31 04:00:29 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ** type of vars stored in the matrices, "type of matrix unit"
 */
 
-# define T_MATU long
+# define T_MATU float
 
 /*
 ** Custom types
