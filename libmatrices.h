@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 21:39:16 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/31 04:00:29 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/31 07:33:44 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ t_mat4					*m_mat4idt(void);
 t_mat4					*m_mat4val(t_vec4 *first, t_vec4 *second,
 								t_vec4 *third, t_vec4 *fourth);
 t_mat4					*m_mat4cpy(t_mat4 *matrix);
+t_mat4					*m_mat4pro(T_MATU angle, T_MATU ratio, T_MATU near, T_MATU far);
 
 /*
 ** Operations functions
