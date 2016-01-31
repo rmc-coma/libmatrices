@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   m_vec4cpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/25 23:09:22 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/30 23:57:53 by rmc-coma         ###   ########.fr       */
+/*   Created: 2016/01/31 01:40:46 by rmc-coma          #+#    #+#             */
+/*   Updated: 2016/01/31 01:43:15 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 
-int	main(void)
+t_vec4	*m_vec4cpy(t_vec4 *vector)
 {
-	t_vec4	*vector;
+	t_vec4	*copy;
 
-	vector = m_vec4val(1, 1, 1, 1);
-	m_vec4put(vector);
-	return (0);
+	copy = (t_vec4 *)malloc(sizeof(t_vec4));
+	copy->vec[0] = vector->vec[0];
+	copy->vec[1] = vector->vec[1];
+	copy->vec[2] = vector->vec[2];
+	copy->vec[3] = vector->vec[3];
+	return (copy);
 }

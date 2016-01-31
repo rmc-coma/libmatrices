@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 21:39:16 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/30 23:00:10 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/01/31 01:40:40 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,13 @@ typedef struct			s_vec4
 
 t_vec4					*m_vec4ini(void);
 t_vec4					*m_vec4val(T_MATU x, T_MATU y, T_MATU z, T_MATU w);
+t_vec4					*m_vec4cpy(t_vec4 *vector);
 
 t_mat4					*m_mat4ini(void);
 t_mat4					*m_mat4idt(void);
 t_mat4					*m_mat4val(t_vec4 *first, t_vec4 *second,
 								t_vec4 *third, t_vec4 *fourth);
+t_mat4					*m_mat4cpy(t_mat4 *matrix);
 
 /*
 ** Operations functions
