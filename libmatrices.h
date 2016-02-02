@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 21:39:16 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/31 07:33:44 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/02 10:06:28 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct			s_vec4
 t_vec4					*m_vec4ini(void);
 t_vec4					*m_vec4val(T_MATU x, T_MATU y, T_MATU z, T_MATU w);
 t_vec4					*m_vec4cpy(t_vec4 *vector);
+t_vec4					m_vec4new(T_MATU x, T_MATU y, T_MATU z, T_MATU w);
 
 t_mat4					*m_mat4ini(void);
 t_mat4					*m_mat4idt(void);
@@ -80,7 +81,7 @@ void					m_mat4trs(t_mat4 **matrix,
 								T_MATU x_trs, T_MATU y_trs, T_MATU z_trs);
 void					m_mat4scl(t_mat4 **matrix,
 								T_MATU x_scl, T_MATU y_scl, T_MATU z_scl);
-void					m_mat4rot(t_mat4 **matrix, float angle, t_vec4 *axle);
+void					m_mat4rot(t_mat4 **matrix, float angle, t_vec4 axle);
 
 
 /*
