@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 21:39:16 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/10 17:17:35 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/10 18:26:39 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ** type of vars stored in the matrices, "type of matrix unit"
 */
 
-# define T_MATU float
+# define T_MATU int
 
 /*
 ** Custom types
@@ -85,7 +85,7 @@ t_mat4					m_mat4idt(void);
 t_mat4					*m_mat4new(void);
 t_mat4					*m_mat4set(t_mat4 *matrix, t_mat4 values);
 t_mat4					*m_mat4cpy(t_mat4 *matrix);
-t_mat4					*m_mat4pro(t_mat4 *modelview, T_MATU angle, T_MATU ratio);
+t_mat4					*m_mat4pro(t_mat4 *modelview, float angle, float ratio);
 
 /*
 ** Operations functions
