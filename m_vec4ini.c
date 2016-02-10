@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/29 21:04:49 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/01/30 00:57:02 by rmc-coma         ###   ########.fr       */
+/*   Created: 2016/01/29 21:06:59 by rmc-coma          #+#    #+#             */
+/*   Updated: 2016/02/10 15:25:52 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 
-t_vec4	*m_vec4ini(void)
+t_vec4	m_vec4ini(void)
 {
-	t_vec4	*vector;
-	t_size	i;
+	t_vec4	vector;
 
-	vector = (t_vec4 *)malloc(sizeof(t_vec4));
-	i = 0;
-	while (i < 4)
-		vector->vec[i++] = 0;
+	vector.vec[0] = 0;
+	vector.vec[1] = 0;
+	vector.vec[2] = 0;
+	vector.vec[3] = 0;
+	vector.color = 0x00000000;
 	return (vector);
 }

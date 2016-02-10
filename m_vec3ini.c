@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   m_vec4new.c                                        :+:      :+:    :+:   */
+/*   m_vec3ini.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/29 21:04:49 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/10 17:43:23 by rmc-coma         ###   ########.fr       */
+/*   Created: 2016/02/07 22:10:38 by rmc-coma          #+#    #+#             */
+/*   Updated: 2016/02/10 15:31:35 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 
-t_vec4	*m_vec4new(void)
+t_vec3	m_vec3ini(void)
 {
-	t_vec4	*vector;
+	t_vec3	vector;
 
-	vector = (t_vec4 *)malloc(sizeof(t_vec4));
-	*vector = m_vec4ini();
+	vector.vec[0] = 0;
+	vector.vec[1] = 0;
+	vector.vec[2] = 0;
 	return (vector);
 }
