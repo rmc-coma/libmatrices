@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 21:39:16 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/11 11:10:24 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/11 13:40:37 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ** type of vars stored in the matrices, "type of matrix unit"
 */
 
-# define T_MATU int
+# define T_MATU double
 
 /*
 ** Custom types
@@ -94,11 +94,13 @@ t_mat4					*m_mat4cpy(t_mat4 *matrix);
 
 t_vec3					m_vec3add(t_vec3 *left, t_vec3 *right);
 t_vec3					m_vec3sub(t_vec3 *left, t_vec3 *right);
+t_vec3					m_vec3nrm(t_vec3 vector);
 
 double					m_vec3mag(t_vec3 *vector);
 double					m_vec3dot(t_vec3 *left, t_vec3 *right);
 double					m_vec3cos(t_vec3 *left, t_vec3 *right);
 double					m_vec3ang(t_vec3 *left, t_vec3 *right);
+t_vec3					m_vec3crs(t_vec3 *left, t_vec3 *right);
 
 t_mat4					m_mat4add(t_mat4 *left, t_mat4 *right);
 t_mat4					m_mat4sub(t_mat4 *left, t_mat4 *right);
@@ -126,7 +128,8 @@ t_mat4					*m_mat4rot(t_mat4 *matrix, float angle, t_vec3 axle);
 ** /!\ USE PRINTF
 */
 
-void					m_mat4put(t_mat4 *matrix);
-void					m_vec4put(t_vec4 *vector);
+void					m_mat4put(t_mat4 matrix);
+void					m_vec4put(t_vec4 vector);
+void					m_vec3put(t_vec3 vector);
 
 #endif

@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   m_vec3mag.c                                        :+:      :+:    :+:   */
+/*   m_vec3put.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/11 09:48:32 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/11 13:35:52 by rmc-coma         ###   ########.fr       */
+/*   Created: 2016/01/29 23:31:58 by rmc-coma          #+#    #+#             */
+/*   Updated: 2016/02/11 13:41:26 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
+#include <stdio.h>
 
-double	m_vec3mag(t_vec3 *vector)
+void	m_vec3put(t_vec3 vector)
 {
-	return (sqrt((vector->vec[0] * vector->vec[0]) +
-				(vector->vec[1] * vector->vec[1]) +
-				(vector->vec[2] * vector->vec[2])));
+	t_size	i;
+
+	i = 0;
+	while (i < 3)
+	{
+		if (vector.vec[i] < 10)
+			printf(" ");
+		printf("%f\n", vector.vec[i]);
+		i++;
+	}
+	printf("\n");
 }
