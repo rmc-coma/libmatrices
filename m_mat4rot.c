@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/30 02:36:22 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/10 17:29:24 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/11 11:05:59 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ t_mat4	*m_mat4rot(t_mat4 *matrix, float angle, t_vec3 axle)
 	rotation.mat[2][0] = x * z * (1 - cos(angle)) - y * sin(angle);
 	rotation.mat[2][1] = y * z * (1 - cos(angle)) + x * sin(angle);
 	rotation.mat[2][2] = z * z * (1 - cos(angle)) + cos(angle);
-	return (m_mat4mul(matrix, matrix, &rotation));
+	return (m_mat4set(matrix, m_mat4mul(matrix, &rotation)));
 }

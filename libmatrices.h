@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 21:39:16 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/10 18:26:39 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/11 11:10:24 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,24 +82,33 @@ t_mat4					m_mat4ini(void);
 t_mat4					m_mat4val(t_vec4 first, t_vec4 second,
 									t_vec4 third, t_vec4 fourth);
 t_mat4					m_mat4idt(void);
+t_mat4					m_mat4lat(t_vec3 eye, t_vec3 center, t_vec3 up);
+t_mat4					m_mat4pro(double angle, double ratio, double near, double far);
 t_mat4					*m_mat4new(void);
 t_mat4					*m_mat4set(t_mat4 *matrix, t_mat4 values);
 t_mat4					*m_mat4cpy(t_mat4 *matrix);
-t_mat4					*m_mat4pro(t_mat4 *modelview, float angle, float ratio);
 
 /*
 ** Operations functions
 */
 
-t_mat4					*m_mat4add(t_mat4 *matrix, t_mat4 *left, t_mat4 *right);
-t_mat4					*m_mat4sub(t_mat4 *matrix, t_mat4 *left, t_mat4 *right);
-t_mat4					*m_mat4mul(t_mat4 *matrix, t_mat4 *left, t_mat4 *right);
+t_vec3					m_vec3add(t_vec3 *left, t_vec3 *right);
+t_vec3					m_vec3sub(t_vec3 *left, t_vec3 *right);
+
+double					m_vec3mag(t_vec3 *vector);
+double					m_vec3dot(t_vec3 *left, t_vec3 *right);
+double					m_vec3cos(t_vec3 *left, t_vec3 *right);
+double					m_vec3ang(t_vec3 *left, t_vec3 *right);
+
+t_mat4					m_mat4add(t_mat4 *left, t_mat4 *right);
+t_mat4					m_mat4sub(t_mat4 *left, t_mat4 *right);
+t_mat4					m_mat4mul(t_mat4 *left, t_mat4 *right);
 
 /*
 ** Special operations functions
 */
 
-t_vec4					*m_mat4vec4mul(t_vec4 *vector, t_mat4 *left, t_vec4 *right);
+t_vec4					m_mat4vec4mul(t_mat4 *left, t_vec4 *right);
 
 /*
 ** Transformations functions

@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   m_mat4trs.c                                        :+:      :+:    :+:   */
+/*   m_mat4lat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/30 02:36:22 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/11 11:05:01 by rmc-coma         ###   ########.fr       */
+/*   Created: 2016/02/11 09:19:53 by rmc-coma          #+#    #+#             */
+/*   Updated: 2016/02/11 11:17:25 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 
-t_mat4	*m_mat4trs(t_mat4 *matrix, T_MATU x_trs, T_MATU y_trs, T_MATU z_trs)
+t_mat4	m_mat4lat(t_vec3 eye, t_vec3 center, t_vec3 up)
 {
-	t_mat4	translation;
+	t_mat4	matrix;
 
-	translation = m_mat4idt();
-	translation.mat[0][3] += x_trs;
-	translation.mat[1][3] += y_trs;
-	translation.mat[2][3] += z_trs;
-	return (m_mat4set(matrix, m_mat4mul(matrix, &translation)));
+	return (matrix);
 }
