@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/11 09:19:53 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/11 13:34:50 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/12 10:09:33 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,12 @@ t_mat4	m_mat4lat(t_vec3 eye, t_vec3 center, t_vec3 up)
 	t_mat4	matrix;
 
 	f = m_vec3nrm(m_vec3sub(&center, &eye));
+	m_vec3put(f);
 	u = m_vec3nrm(up);
+	m_vec3put(u);
+	m_vec3put(m_vec3crs(&f, &u));
 	s = m_vec3nrm(m_vec3crs(&f, &u));
+	m_vec3put(s);
 	matrix = m_mat4idt();
 	u = m_vec3crs(&s, &f);
 	matrix.mat[0][0] = s.vec[0];
