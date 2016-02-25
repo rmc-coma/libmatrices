@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 21:39:16 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/11 13:40:37 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/25 01:35:38 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,34 @@ typedef unsigned int	t_size;
 ** Matrices structures
 */
 
-typedef struct			s_mat4
-{
-	T_MATU			mat[4][4];
-}						t_mat4;
-
 typedef struct			s_vec4
 {
-	T_MATU			vec[4];
+	T_MATU			x;
+	T_MATU			y;
+	T_MATU			z;
+	T_MATU			w;
 	int				color;
 }						t_vec4;
 
+typedef struct			s_mat4
+{
+	t_vec4			a;
+	t_vec4			b;
+	t_vec4			c;
+	t_vec4			d;
+}						t_mat4;
+
 typedef struct			s_vec3
 {
-	T_MATU			vec[3];
+	T_MATU			x;
+	T_MATU			y;
+	T_MATU			z;
 }						t_vec3;
 
 typedef struct			s_vec2
 {
-	T_MATU			vec[2];
+	T_MATU			x;
+	T_MATU			y;
 }						t_vec2;
 
 /*
@@ -83,7 +92,8 @@ t_mat4					m_mat4val(t_vec4 first, t_vec4 second,
 									t_vec4 third, t_vec4 fourth);
 t_mat4					m_mat4idt(void);
 t_mat4					m_mat4lat(t_vec3 eye, t_vec3 center, t_vec3 up);
-t_mat4					m_mat4pro(double angle, double ratio, double near, double far);
+t_mat4					m_mat4pro(double angle, double ratio,
+								double near, double far);
 t_mat4					*m_mat4new(void);
 t_mat4					*m_mat4set(t_mat4 *matrix, t_mat4 values);
 t_mat4					*m_mat4cpy(t_mat4 *matrix);
@@ -102,9 +112,12 @@ double					m_vec3cos(t_vec3 *left, t_vec3 *right);
 double					m_vec3ang(t_vec3 *left, t_vec3 *right);
 t_vec3					m_vec3crs(t_vec3 *left, t_vec3 *right);
 
+t_vec4					m_vec4add(t_vec4 *left, t_vec4 *right);
+t_vec4					m_vec4sub(t_vec4 *left, t_vec4 *right);
+
 t_mat4					m_mat4add(t_mat4 *left, t_mat4 *right);
 t_mat4					m_mat4sub(t_mat4 *left, t_mat4 *right);
-t_mat4					m_mat4mul(t_mat4 *left, t_mat4 *right);
+t_mat4					m_mat4mul(t_mat4 *l, t_mat4 *r);
 
 /*
 ** Special operations functions
@@ -121,7 +134,6 @@ t_mat4					*m_mat4trs(t_mat4 *matrix,
 t_mat4					*m_mat4scl(t_mat4 *matrix,
 								T_MATU x_scl, T_MATU y_scl, T_MATU z_scl);
 t_mat4					*m_mat4rot(t_mat4 *matrix, float angle, t_vec3 axle);
-
 
 /*
 ** Debug fonctions

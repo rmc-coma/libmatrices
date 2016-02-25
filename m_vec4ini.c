@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/29 21:06:59 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/10 15:25:52 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/24 22:41:04 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ t_vec4	m_vec4ini(void)
 {
 	t_vec4	vector;
 
-	vector.vec[0] = 0;
-	vector.vec[1] = 0;
-	vector.vec[2] = 0;
-	vector.vec[3] = 0;
+	vector.x = 0;
+	vector.y = 0;
+	vector.z = 0;
+	vector.w = 0;
 	vector.color = 0x00000000;
 	return (vector);
 }

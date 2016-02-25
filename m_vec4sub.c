@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   m_vec3val.c                                        :+:      :+:    :+:   */
+/*   m_vec4sub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/10 15:31:47 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/24 22:43:47 by rmc-coma         ###   ########.fr       */
+/*   Created: 2016/02/11 09:43:50 by rmc-coma          #+#    #+#             */
+/*   Updated: 2016/02/25 01:16:15 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libmatrices.h"
 
-t_vec3	m_vec3val(T_MATU x, T_MATU y, T_MATU z)
+t_vec4	m_vec4sub(t_vec4 *left, t_vec4 *right)
 {
-	t_vec3	vector;
+	t_vec4	vector;
 
-	vector.x = x;
-	vector.y = y;
-	vector.z = z;
+	vector.x = left->x - right->x;
+	vector.y = left->y - right->y;
+	vector.z = left->z - right->z;
+	vector.w = left->w - right->w;
 	return (vector);
 }

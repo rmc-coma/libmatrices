@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/07 22:10:38 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/10 16:02:31 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/24 22:45:34 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_vec2	m_vec2ini(void)
 {
 	t_vec2	vector;
 
-	vector.vec[0] = 0;
-	vector.vec[1] = 0;
+	vector.x = 0;
+	vector.y = 0;
 	return (vector);
 }

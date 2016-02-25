@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/11 09:19:53 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/12 10:21:33 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/25 01:33:53 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ t_mat4	m_mat4lat(t_vec3 eye, t_vec3 center, t_vec3 up)
 	f = m_vec3nrm(m_vec3sub(&center, &eye));
 	u = m_vec3nrm(up);
 	s = m_vec3nrm(m_vec3crs(&f, &u));
-	matrix = m_mat4idt();
 	u = m_vec3crs(&s, &f);
-	matrix.mat[0][0] = s.vec[0];
-	matrix.mat[1][0] = s.vec[1];
-	matrix.mat[2][0] = s.vec[2];
-	matrix.mat[0][1] = u.vec[0];
-	matrix.mat[1][1] = u.vec[1];
-	matrix.mat[2][1] = u.vec[2];
-	matrix.mat[0][2] = -(f.vec[0]);
-	matrix.mat[1][2] = -(f.vec[1]);
-	matrix.mat[2][2] = -(f.vec[2]);
-	matrix.mat[3][0] = -(m_vec3dot(&s, &eye));
-	matrix.mat[3][1] = -(m_vec3dot(&u, &eye));
-	matrix.mat[3][2] = m_vec3dot(&f, &eye);
+	matrix = m_mat4idt();
+	matrix.a.x = s.x;
+	matrix.b.x = s.y;
+	matrix.c.x = s.z;
+	matrix.a.y = u.x;
+	matrix.b.y = u.y;
+	matrix.c.y = u.z;
+	matrix.a.z = -(f.x);
+	matrix.b.z = -(f.y);
+	matrix.c.z = -(f.z);
+	matrix.d.x = -(m_vec3dot(&s, &eye));
+	matrix.d.y = -(m_vec3dot(&u, &eye));
+	matrix.d.z = m_vec3dot(&f, &eye);
 	return (matrix);
 }

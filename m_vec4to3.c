@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/10 15:57:51 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/10 17:30:22 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/24 22:43:16 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_vec3	*m_vec4to3(t_vec4 *src, t_vec3 *dst)
 {
-	dst->vec[0] = src->vec[0];
-	dst->vec[1] = src->vec[1];
-	dst->vec[2] = src->vec[2];
+	dst->x = src->x;
+	dst->y = src->y;
+	dst->z = src->z;
 	return (dst);
 }

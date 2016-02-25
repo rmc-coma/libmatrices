@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/10 16:02:44 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/10 18:04:52 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/24 22:45:49 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_vec2	m_vec2val(T_MATU x, T_MATU y)
 {
 	t_vec2	vector;
 
-	vector.vec[0] = x;
-	vector.vec[1] = y;
+	vector.x = x;
+	vector.y = y;
 	return (vector);
 }
