@@ -6,7 +6,7 @@
 /*   By: rmc-coma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 21:39:16 by rmc-coma          #+#    #+#             */
-/*   Updated: 2016/02/25 01:35:38 by rmc-coma         ###   ########.fr       */
+/*   Updated: 2016/02/27 03:15:16 by rmc-coma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,9 @@ t_mat4					*m_mat4cpy(t_mat4 *matrix);
 /*
 ** Operations functions
 */
+
+double					m_vec2mag(t_vec2 *vector);
+t_vec2					m_vec2nrm(t_vec2 *vector);
 
 t_vec3					m_vec3add(t_vec3 *left, t_vec3 *right);
 t_vec3					m_vec3sub(t_vec3 *left, t_vec3 *right);
